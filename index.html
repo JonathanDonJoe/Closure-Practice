@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closure Practice</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+function addd (x) {
+    var actually_add = function (y) {
+        return x + y;
+    }
+    return actually_add;
+}
+// console.log(addd(3)(4));
+
+
+function Toggle(initial){
+    let toggle = initial;
+    this.update = function() {
+        toggle++;
+        console.log(toggle);
+    }
+}
+// const x = new Toggle(0);
+// x.update();
+// x.toggle++;
+// x.update();
+
+
+function giveMeEms(pixels){
+    var baseValue = 16;
+    function doTheMath(){
+        return pixels/baseValue;
+    }
+    return doTheMath;
+}
+var smallSize = giveMeEms(12);
+var mediumSize = giveMeEms(18);
+var largeSize = giveMeEms(24);
+var xLargeSize = giveMeEms(32);
+// console.log("small size: ", smallSize());
+// console.log("medium size: ", mediumSize());
+// console.log("large size: ", largeSize());
+// console.log("xLarge size: ", xLargeSize());
+
+const add = function(num1) {
+    return function(num2) {
+        return num1 + num2
+    }
+}
+// add5 = add(5);
+// console.log(add5);
+// console.log(add5(5));
+
+</script>
+</html>
